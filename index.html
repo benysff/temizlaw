@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temiz Law Firm | Hukuk Bürosu</title>
+  
+  <link rel="icon" type="image/png" href="favicon.png" />
+  
+  <meta property="og:title" content="Temiz Law Firm | Uluslararası Hukuk Bürosu" />
+  <meta property="og:description" content="Güvenilir, Profesyonel ve Uluslararası Hukuki Danışmanlık. İstanbul merkezli hukuk büromuzla tanışın." />
+  <meta property="og:image" content="https://temizlaw.com/temiz-logo.png" />
+  <meta property="og:url" content="https://temizlaw.com" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #1a1a1a;
+      --navy-light: #2c2c2c;
+      --gold: #2d6a4a; 
+      --gold-light: #4a9e73;
+      --cream: #f6f4f0;
+      --white: #ffffff;
+      --gray: #6b7280;
+      --gray-light: #e4e0d8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ─────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.6rem 4rem;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      transition: all .3s ease;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--white);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .nav-logo img {
+      height: 75px;
+      width: auto;
+      transition: height 0.3s ease; 
+    }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(20,20,20,0.75);
+      text-decoration: none;
+      transition: color .2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute; bottom: -3px; left: 0; right: 0;
+      height: 1px; background: var(--gold-light);
+      transform: scaleX(0); transition: transform .25s;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    /* ── HERO ─────────────────────────────── */
+    #hero {
+      height: 100vh;
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0a150a 0%, #111111 40%, #0f1a0f 70%, #0a0a0a 100%);
+    }
+
+    .hero-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.35; 
+    }
+
+    .hero-lines {
+      position: absolute; inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(74,158,115,0.04) 80px, rgba(74,158,115,0.04) 81px),
+        repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(74,158,115,0.04) 80px, rgba(74,158,115,0.04) 81px);
+    }
+
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 2;
+      background: linear-gradient(to bottom, rgba(10,20,10,0.2) 0%, rgba(10,20,10,0.5) 60%, rgba(10,20,10,0.8) 100%);
+    }
+
+    .hero-content {
+      position: relative; z-index: 3;
+      text-align: center;
+      padding: 0 2rem;
+      animation: heroFadeIn 1.4s ease forwards;
+    }
+
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-subtitle {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 3rem;
+    }
+
+    .hero-cta {
+      display: inline-flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center;
+    }
+    .btn-primary {
+      padding: 0.9rem 2.5rem;
+      background: var(--gold);
+      color: var(--white);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none; cursor: pointer;
+      transition: background .25s, transform .2s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .btn-outline {
+      padding: 0.9rem 2.5rem;
+      background: transparent;
+      color: var(--white);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      cursor: pointer;
+      transition: border-color .25s, transform .2s;
+    }
+    .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); transform: translateY(-2px); }
+
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      animation: bounce 2s infinite;
+      z-index: 3;
+    }
+    .hero-scroll::before {
+      content: '';
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, transparent, rgba(74,158,115,0.6));
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ── QUOTES STRIP ────────────────────── */
+    #quotes {
+      background: #1a1a1a;
+      padding: 6rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    #quotes::before, #quotes::after {
+      content: '';
+      position: absolute; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+    #quotes::before { top: 0; }
+    #quotes::after { bottom: 0; }
+
+    .quotes-inner {
+      max-width: 900px; margin: 0 auto;
+      text-align: center;
+    }
+
+    .quote-display {
+      position: relative;
+      min-height: 220px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+
+    .quote-item {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.8s ease;
+      pointer-events: none;
+    }
+    .quote-item.active { opacity: 1; position: relative; pointer-events: auto; }
+
+    .quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      color: var(--gold);
+      opacity: 0.3;
+      line-height: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 750px;
+    }
+
+    .quote-author {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    .quote-dots {
+      display: flex; gap: 0.6rem; justify-content: center; margin-top: 2rem;
+    }
+    .quote-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(74,158,115,0.3);
+      cursor: pointer; transition: background .3s;
+    }
+    .quote-dot.active { background: var(--gold-light); }
+
+    /* ── DİĞER BÖLÜMLERİN CSS'LERİ ──────────── */
+    #hakkimizda { background: var(--cream); padding: 7rem 4rem; }
+    .section-label { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; color: var(--navy); line-height: 1.15; margin-bottom: 2.5rem; }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .about-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .about-text p { font-size: 0.95rem; line-height: 1.9; color: #3a3a3a; margin-bottom: 1.2rem; font-weight: 300; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+    .stat-item { padding: 1.5rem; border: 1px solid var(--gray-light); border-top: 2px solid var(--gold); overflow: hidden; }
+    .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--navy); line-height: 1; }
+    .stat-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-top: 0.4rem; }
+    
+    .about-visual { position: relative; }
+    .about-img-wrapper { position: relative; display: block; }
+    .about-img-wrapper img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; position: relative; z-index: 1; border-radius: 4px; }
+    .about-accent { position: absolute; bottom: -1.5rem; right: -1.5rem; width: 60%; height: 60%; border: 2px solid var(--gold); pointer-events: none; z-index: 2; }
+    .about-accent-2 { position: absolute; top: -1.5rem; left: -1.5rem; width: 40%; height: 30%; border: 1px solid rgba(74,158,115,0.3); pointer-events: none; z-index: 2; }
+
+    /* ── TEAM ───────────────────────────── */
+    #ekibimiz { background: var(--white); padding: 7rem 4rem; }
+    .team-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+    }
+    .team-card { text-align: center; }
+    .team-img-wrapper {
+      position: relative; overflow: hidden; margin-bottom: 1.4rem;
+      aspect-ratio: 3/4;
+    }
+    .team-img-wrapper img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top;
+      display: block;
+      filter: grayscale(20%);
+      transition: transform .5s ease, filter .4s ease;
+    }
+    .team-card:hover .team-img-wrapper img { transform: scale(1.04); filter: grayscale(0%); }
+    .team-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(45,106,74,0.55) 0%, transparent 55%);
+      opacity: 0; transition: opacity .4s ease;
+    }
+    .team-card:hover .team-img-overlay { opacity: 1; }
+    .team-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 500; color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+    .team-title {
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); font-weight: 300;
+    }
+    @media (max-width: 900px) {
+      #ekibimiz { padding: 5rem 2rem; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    }
+    @media (max-width: 500px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .team-name { font-size: 1rem; }
+    }
+
+    #faaliyetler { background: #f0ece2; padding: 7rem 4rem; }
+    .section-header { max-width: 1200px; margin: 0 auto 4rem; text-align: center; }
+    .practice-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+    .practice-card { padding: 2.5rem 2rem; border: 1px solid var(--gray-light); border-right: none; border-bottom: none; background: var(--white); cursor: pointer; transition: all .3s; position: relative; overflow: hidden; }
+    .practice-card:nth-child(3n) { border-right: 1px solid var(--gray-light); }
+    .practice-card:nth-last-child(-n+3) { border-bottom: 1px solid var(--gray-light); }
+    .practice-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform .3s; }
+    .practice-card:hover { background: #1a1a1a; }
+    .practice-card:hover::before { transform: scaleX(1); }
+    .practice-card:hover .pc-title, .practice-card:hover .pc-num { color: var(--white); }
+    .practice-card:hover .pc-text { color: rgba(255,255,255,0.6); }
+    .practice-card:hover .pc-icon { color: var(--gold-light); }
+    .pc-num { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--gold); margin-bottom: 1.2rem; transition: color .3s; }
+    .pc-icon { font-size: 1.8rem; margin-bottom: 1rem; color: var(--navy); transition: color .3s; }
+    .pc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--navy); margin-bottom: 0.8rem; transition: color .3s; }
+    .pc-text { font-size: 0.82rem; line-height: 1.7; color: var(--gray); font-weight: 300; transition: color .3s; }
+
+    #hizmetler { background: #1a1a1a; padding: 7rem 4rem; }
+    #hizmetler .section-label { color: var(--gold-light); }
+    #hizmetler .section-title { color: var(--white); }
+    .services-inner { max-width: 1200px; margin: 0 auto; }
+    .services-tabs { display: flex; gap: 0; flex-wrap: wrap; border-bottom: 1px solid rgba(74,158,115,0.25); margin-bottom: 3rem; }
+    .tab-btn { padding: 0.9rem 1.5rem; background: none; border: none; font-family: 'Jost', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); cursor: pointer; border-bottom: 2px solid transparent; transition: all .25s; margin-bottom: -1px; }
+    .tab-btn.active, .tab-btn:hover { color: var(--gold-light); border-bottom-color: var(--gold-light); }
+    .tab-content { display: none; animation: fadeIn .4s ease; }
+    .tab-content.active { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .service-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--white); margin-bottom: 1.5rem; }
+    .service-body p { font-size: 0.9rem; line-height: 1.9; color: rgba(255,255,255,0.6); font-weight: 300; }
+    .service-highlights { padding: 2rem; border: 1px solid rgba(74,158,115,0.25); border-top: 2px solid var(--gold); }
+    .service-highlights h4 { font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1.2rem; }
+    .service-highlights li { list-style: none; font-size: 0.85rem; color: rgba(255,255,255,0.6); padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-weight: 300; display: flex; align-items: center; gap: 0.7rem; }
+    .service-highlights li::before { content: '—'; color: var(--gold); font-size: 0.7rem; }
+    .service-highlights li:last-child { border-bottom: none; }
+
+    #iletisim { background: var(--cream); padding: 7rem 4rem; }
+    .contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
+    .contact-detail { margin-bottom: 2.5rem; }
+    .contact-detail-label { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    .contact-detail-value { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--navy); font-weight: 300; }
+    .contact-detail-value a { color: var(--navy); text-decoration: none; }
+    .contact-detail-value a:hover { color: var(--gold); }
+    
+    .form-row { margin-bottom: 1.2rem; }
+    .form-row label { display: block; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.4rem; }
+    .form-row input, .form-row textarea, .form-row select { width: 100%; padding: 0.85rem 1rem; background: var(--white); border: 1px solid var(--gray-light); font-family: 'Jost', sans-serif; font-size: 0.88rem; color: var(--navy); font-weight: 300; outline: none; transition: border-color .2s; appearance: none; }
+    .form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--gold); }
+    .form-row textarea { resize: vertical; min-height: 120px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit { display: inline-flex; align-items: center; gap: 0.7rem; padding: 1rem 2.5rem; background: #1a1a1a; color: var(--white); font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid var(--navy); cursor: pointer; transition: all .25s; }
+    .form-submit:hover { background: var(--gold); border-color: var(--gold); }
+
+    /* Footer padding ve logo boyutu optimize edildi */
+    footer { background: #111111; padding: 2rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(74,158,115,0.2); }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.5); }
+    .footer-logo img { height: 75px; width: auto; filter: brightness(0) invert(0.6); } 
+    .footer-copy { font-size: 0.72rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); }
+
+    .divider { width: 40px; height: 1px; background: var(--gold); margin: 1.5rem 0; }
+    .divider-center { margin: 1.5rem auto; }
+
+    /* ── LANGUAGE SWITCHER ───────────────── */
+    .lang-switcher { position: fixed; left: 1.25rem; bottom: 1.25rem; z-index: 200; }
+    .lang-btn {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--gold); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Jost', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.05em;
+      cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,0.18); border: none;
+      transition: background .2s, transform .2s;
+    }
+    .lang-btn:hover { background: var(--gold-light); transform: scale(1.05); }
+    .lang-options {
+      position: absolute; left: 0; bottom: 66px;
+      display: flex; flex-direction: column; gap: 0.5rem;
+      opacity: 0; pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .lang-options.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .lang-option {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--white); color: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Jost', sans-serif; font-weight: 600; font-size: 0.75rem;
+      cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      border: 1px solid rgba(0,0,0,0.07); transition: all .2s;
+    }
+    .lang-option:hover { background: var(--gold-light); color: var(--white); border-color: transparent; }
+    .lang-option.active { background: var(--gold); color: var(--white); border-color: transparent; }
+
+    /* ── SCROLL ANIMATIONS ──────────────── */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ─────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 0.5rem 2rem; }
+      .nav-links { display: none; }
+      #hero .hero-title { font-size: 3rem; }
+      #hakkimizda, #faaliyetler, #hizmetler, #iletisim { padding: 5rem 2rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-visual { order: -1; }
+      .practice-grid { grid-template-columns: 1fr 1fr; }
+      .practice-card:nth-child(2n) { border-right: 1px solid var(--gray-light); }
+      .tab-content.active { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      footer { flex-direction: column; text-align: center; padding: 2rem; }
+    }
+    @media (max-width: 600px) {
+      .practice-grid { grid-template-columns: 1fr; }
+      .practice-card { border-right: 1px solid var(--gray-light) !important; }
+      .about-stats { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      #quotes { padding: 4rem 2rem; }
+      #iletisim .contact-detail:last-child .contact-detail-value { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="#" class="nav-logo">
+    <img src="temiz-logo1.png" alt="Temiz Law Firm" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#hakkimizda">Hakkımızda</a></li>
+    <li><a href="#ekibimiz">Avukatlarımız</a></li>
+    <li><a href="#faaliyetler">Faaliyet Alanları</a></li>
+    <li><a href="#hizmetler">Hizmetler</a></li>
+    <li><a href="#iletisim">İletişim</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <video class="hero-video" id="hero-video" autoplay muted loop playsinline>
+    <source src="istanbul.mp4" type="video/mp4" />
+    <source src="istanbul.webm" type="video/webm" />
+  </video>
+
+  <div class="hero-lines"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">İstanbul · Uluslararası Hukuk Bürosu</div>
+    <h1 class="hero-title">Temiz<br><em>Law Firm</em></h1>
+    <p class="hero-subtitle">Güvenilir, Profesyonel ve Uluslararası Hukuki Danışmanlık</p>
+    <div class="hero-cta">
+      <a href="#iletisim" class="btn-primary">Danışma Talep Et</a>
+      <a href="#faaliyetler" class="btn-outline">Faaliyet Alanları</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Keşfet</div>
+</section>
+
+<section id="quotes">
+  <div class="quotes-inner">
+    <div class="section-label" style="color:var(--gold-light); text-align:center; margin-bottom:2.5rem;">Hukuk Üzerine</div>
+    <div class="quote-display">
+      <div class="quote-item active" id="q0">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">Hukuk ilmi mukaddes bir şeydir. Kıymetini para ile ölçmek onu çok aşağılatmak olur.</p>
+        <div class="quote-author">— Ulpianus</div>
+      </div>
+      <div class="quote-item" id="q1">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">Görevimizi yaparken kimseye tabiyiz; ne müvekkile, ne hakime, hele ne iktidara. Avukatlar tarih boyu köle kullanmadılar ama hiçbir zaman efendileri de olmadı.</p>
+        <div class="quote-author">— Molierac</div>
+      </div>
+      <div class="quote-item" id="q2">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">Adalet ancak hakikatten, saadet ancak adaletten doğabilir.</p>
+        <div class="quote-author">— Émile Zola</div>
+      </div>
+    </div>
+    <div class="quote-dots">
+      <div class="quote-dot active" onclick="goToQuote(0)"></div>
+      <div class="quote-dot" onclick="goToQuote(1)"></div>
+      <div class="quote-dot" onclick="goToQuote(2)"></div>
+    </div>
+  </div>
+</section>
+
+<section id="hakkimizda">
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <div class="section-label">Hakkımızda</div>
+      <h2 class="section-title">Hukukun<br><em>İlkeleri</em> Üzerine<br>Kurulu Bir Büro</h2>
+      <div class="divider"></div>
+      <p>Temiz Hukuk, Av. Ali Başar Temiz tarafından kurulmuş olup hukukun birçok alanında profesyonel hizmet veren uluslararası bir hukuk bürosudur.</p>
+      <p>Türkiye'nin uluslararası alanda önde gelen hukuk büroları arasında bulunan Temiz Hukuk'un merkezi İstanbul olmakla birlikte Türkiye'nin diğer önemli merkezlerinde de bürolarla iş birliği içindedir. Büromuz Türkçe, İngilizce, Almanca ve Rusça dillerinde hizmet sunmaktadır.</p>
+      <p>Müvekkillerimize; inşaat, gayrimenkul, turizm, lojistik, otomotiv, enerji, dijital perakende, sağlık, hızlı tüketim, kimya ve petrol ürünleri sektörlerinde ulusal ve uluslararası düzeyde hukuki destek sunulmaktadır.</p>
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-number">4+</div>
+          <div class="stat-label">Dil</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">12+</div>
+          <div class="stat-label">Hukuk Alanı</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" style="font-size: clamp(1.4rem, 2vw, 2rem); white-space: nowrap;">TR · DE · RU · EN</div>
+          <div class="stat-label">Uluslararası Erişim</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">İstanbul</div>
+          <div class="stat-label">Merkez Ofis</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <div class="about-img-wrapper">
+        <img src="ali-basar.jpg" alt="Av. Ali Başar Temiz" />
+        <div class="about-accent"></div>
+        <div class="about-accent-2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ekibimiz">
+  <div class="section-header reveal">
+    <div class="section-label">Kadromuz</div>
+    <h2 class="section-title">Avukat<em>larımız</em></h2>
+    <div class="divider divider-center"></div>
+  </div>
+  <div class="team-grid">
+    <div class="team-card reveal">
+      <div class="team-img-wrapper">
+        <img src="ali-basar.jpg" alt="Av. Ali Başar Temiz" />
+        <div class="team-img-overlay"></div>
+      </div>
+      <div class="team-name">Av. Ali Başar Temiz</div>
+      <div class="team-title">Kurucu Avukat</div>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-img-wrapper">
+        <img src="av-nihansu-narli.jpg" alt="Av. Nihansu Narlı" />
+        <div class="team-img-overlay"></div>
+      </div>
+      <div class="team-name">Av. Nihansu Narlı</div>
+      <div class="team-title">Avukat</div>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-img-wrapper">
+        <img src="av-ece-arslan.jpg" alt="Av. Ece Arslan" />
+        <div class="team-img-overlay"></div>
+      </div>
+      <div class="team-name">Av. Ece Arslan</div>
+      <div class="team-title">Avukat</div>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-img-wrapper">
+        <img src="av-cansu-didem-ince.jpg" alt="Av. Cansu Didem İnce" />
+        <div class="team-img-overlay"></div>
+      </div>
+      <div class="team-name">Av. Cansu Didem İnce</div>
+      <div class="team-title">Avukat</div>
+    </div>
+  </div>
+</section>
+
+<section id="faaliyetler">
+  <div class="section-header reveal">
+    <div class="section-label">Uzmanlık</div>
+    <h2 class="section-title">Faaliyet <em>Alanlarımız</em></h2>
+    <div class="divider divider-center"></div>
+    <p style="font-size:0.9rem; color:var(--gray); max-width:600px; margin:0 auto; font-weight:300; line-height:1.8;">
+      Ceza, ticaret, iş, idare, tüketici, icra ve iflas, aile, taşınmaz, sigorta ve vergi hukuku alanlarında hukuki danışmanlık ve dava hizmetleri sunuyoruz.
+    </p>
+  </div>
+  <div class="practice-grid">
+    <div class="practice-card reveal">
+      <div class="pc-num">01</div>
+      <div class="pc-icon">⚖</div>
+      <div class="pc-title">Ceza Hukuku</div>
+      <p class="pc-text">Ağır ceza ve asliye ceza mahkemesi yetki alanındaki davalarda müdafilik ve müşteki vekilliği hizmetleri.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">02</div>
+      <div class="pc-icon">💻</div>
+      <div class="pc-title">Bilişim & KVKK</div>
+      <p class="pc-text">GDPR ve KVKK kapsamında veri güvenliği, bilişim hukuku ve dijital suçlar konularında uzman danışmanlık.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">03</div>
+      <div class="pc-icon">🏛</div>
+      <div class="pc-title">Ticaret Hukuku</div>
+      <p class="pc-text">Anonim ve limited şirketler, kıymetli evrak, uluslararası ticari ilişkiler ve şirket danışmanlıkları.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">04</div>
+      <div class="pc-icon">👷</div>
+      <div class="pc-title">İş Hukuku</div>
+      <p class="pc-text">İşçi ve işveren hakları, iş uyuşmazlıkları, dava, arabuluculuk ve güncel mevzuat danışmanlığı.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">05</div>
+      <div class="pc-icon">🏛</div>
+      <div class="pc-title">İdare Hukuku</div>
+      <p class="pc-text">Gümrük, vergi, imar, kamulaştırma ve idari cezalara ilişkin geniş kapsamlı idare davaları portfolyosu.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">06</div>
+      <div class="pc-icon">🏠</div>
+      <div class="pc-title">Gayrimenkul & Kira</div>
+      <p class="pc-text">Tapu iptali, tescil, intifa hakkı, kat karşılığı inşaat sözleşmeleri ve kira hukukuna ilişkin tüm uyuşmazlıklar.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">07</div>
+      <div class="pc-icon">👨‍👩‍👧</div>
+      <div class="pc-title">Aile Hukuku</div>
+      <p class="pc-text">Evlilik, boşanma, velayet, nafaka, mal rejimleri ve evlat edinme süreçlerinde kapsamlı hukuki destek.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">08</div>
+      <div class="pc-icon">💰</div>
+      <div class="pc-title">İcra & İflas</div>
+      <p class="pc-text">Alacak tahsili, icra takibi ve iflas süreçlerinin başarıyla yönetilmesi için uzman hukuki rehberlik.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">09</div>
+      <div class="pc-icon">📋</div>
+      <div class="pc-title">Vergi & Sigorta</div>
+      <p class="pc-text">Kurumlar, gelir, KDV ve damga vergisi uyuşmazlıkları; sigorta tahkimi ve tazminat talepleri.</p>
+    </div>
+  </div>
+</section>
+
+<section id="hizmetler">
+  <div class="services-inner">
+    <div class="reveal">
+      <div class="section-label">Detaylı Bilgi</div>
+      <h2 class="section-title" style="color:var(--white);">Hizmet <em style="color:var(--gold-light);">Alanlarımız</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="services-tabs reveal">
+      <button class="tab-btn active" onclick="switchTab('ceza')">Ceza</button>
+      <button class="tab-btn" onclick="switchTab('bilisim')">Bilişim & KVKK</button>
+      <button class="tab-btn" onclick="switchTab('ticaret')">Ticaret</button>
+      <button class="tab-btn" onclick="switchTab('is')">İş</button>
+      <button class="tab-btn" onclick="switchTab('idare')">İdare</button>
+      <button class="tab-btn" onclick="switchTab('aile')">Aile</button>
+      <button class="tab-btn" onclick="switchTab('gayrimenkul')">Gayrimenkul</button>
+      <button class="tab-btn" onclick="switchTab('vergi')">Vergi</button>
+    </div>
+
+    <div id="tab-ceza" class="tab-content active">
+      <div class="service-body">
+        <h3>Ceza Hukuku</h3>
+        <p>Oldukça kapsamlı olan ceza hukuku, suç teşkil eden bir haksızlığın varlığından söz edilebilmesi ve bir kişi hakkında ceza hukuku yaptırımı uygulanabilmesi için gerekli şartların oluşup oluşmadığı ile ilgilenir. Büromuzda hem ağır ceza hem de asliye ceza mahkemesi yetki alanına dahil suçlarla ilgili defalarca çalışılmış olup müdafilik ve müşteki vekilliği hizmetleri sunulmaktadır.</p>
+      </div>
+      <div class="service-highlights">
+        <h4>Hizmet Kapsamı</h4>
+        <ul>
+          <li>Ağır Ceza Mahkemesi Davaları</li>
+          <li>Asliye Ceza Mahkemesi Davaları</li>
+          <li>Müdafilik Hizmeti</li>
+          <li>Müşteki Vekilliği</li>
+          <li>Ceza Hukuku Teorisi Danışmanlığı</li>
+        </ul>
+      </div>
+    </div>
+    <div id="tab-bilisim" class="tab-content">
+      <div class="service-body">
+        <h3>Bilişim Hukuku & KVKK</h3>
+        <p>Verilerin elektronik ortamlarda toplandığı günümüz dünyasında, hem Türk hukuku hem de uluslararası mevzuat çerçevesinde veri güvenliğiniz için hizmet sunmaktayız. AB Genel Veri Koruma Regülasyonu (GDPR) ve KVKK kapsamında hem danışmanlık hem de bağımsız hizmet olarak ihtiyaçlarınıza Türkçe ve İngilizce cevap vermekteyiz.</p>
+      </div>
+      <div class="service-highlights">
+        <h4>Hizmet Kapsamı</h4>
+        <ul>
+          <li>KVKK Uyum Danışmanlığı</li>
+          <li>GDPR Süreç Yönetimi</li>
+          <li>Veri Güvenliği Politikaları</li>
+          <li>Bilişim Şirketi Danışmanlığı</li>
+          <li>Dijital Suçlar</li>
+        </ul>
+      </div>
+    </div>
+    <div id="tab-ticaret" class="tab-content">
+      <div class="service-body">
+        <h3>Ticaret Hukuku</h3>
+        <p>Ticaret hukuku; işletmeler, tacirler ve bireyler arasındaki tüm ticari ilişkileri, alışverişi ve tarafların haklarını düzenler. Kıymetli evrak uyuşmazlıkları, anonim ve limited şirketler, Türkiye ile ticari bağlantısı bulunan yabancı şirketlere kapsamlı hizmet sunulmaktadır. Distribütörlük, satım ve şirket danışmanlıkları da faaliyet alanımızdadır.</p>
+      </div>
+      <div class="service-highlights">
+        <h4>Hizmet Kapsamı</h4>
+        <ul>
+          <li>Şirket Kuruluşu & Yönetimi</li>
+          <li>Kıymetli Evrak Uyuşmazlıkları</li>
+          <li>Uluslararası Ticaret Sözleşmeleri</li>
+          <li>Distribütörlük Sözleşmeleri</li>
+          <li>İthalat & İhracat Hukuku</li>
+          <li>Lisans Sözleşmeleri (TR/EN)</li>
+        </ul>
+      </div>
+    </div>
+    <div id="tab-is" class="tab-content">
+      <div class="service-body">
+        <h3>İş Hukuku</h3>
+        <p>Türkiye'de en çok ihtilafın doğduğu alanlardan biri olan iş hukuku, İş Kanunu ve yardımcı düzenlemeler kapsamında değerlendirilir. Covid-19 sürecinde getirilen yeni düzenlemeler dahil tüm güncel mevzuat çerçevesinde şirketlere bilgilendirme ve uyarı yapılmaktadır. Hem işverenler hem de işçiler için her türlü dava, arabuluculuk ve çözüm yolları icra edilmektedir.</p>
+      </div>
+      <div class="service-highlights">
+        <h4>Hizmet Kapsamı</h4>
+        <ul>
+          <li>İşçi & İşveren Davaları</li>
+          <li>Arabuluculuk</li>
+          <li>İşe İade Davaları</li>
+          <li>Kıdem & İhbar Tazminatı</li>
+          <li>Toplu İş Hukuku</li>
+        </ul>
+      </div>
+    </div>
+    <div id="tab-idare" class="tab-content">
+      <div class="service-body">
+        <h3>İdare Hukuku</h3>
+        <p>Özel kişi ve kurumların devlet ile olan ilişkilerini düzenleyen idare hukuku; gümrük, vergi, imar, kamulaştırma ve idari cezalarda özel uzmanlık gerektirmektedir. Kurucu Av. Ali Başar Temiz'in idare hukuku yüksek lisans eğitiminden ve yoğun dava deneyiminden kaynaklanan geniş bir portfolyoya sahibiz.</p>
+      </div>
+      <div class="service-highlights">
+        <h4>Hizmet Kapsamı</h4>
+        <ul>
+          <li>İdare Mahkemesi Davaları</li>
+          <li>Kamulaştırma Uyuşmazlıkları</li>
+          <li>İmar Hukuku</li>
+          <li>Gümrük Uyuşmazlıkları</li>
+          <li>İdari Cezalar</li>
+        </ul>
+      </div>
+    </div>
+    <div id="tab-aile" class="tab-content">
+      <div class="service-body">
+        <h3>Aile Hukuku</h3>
+        <p>Türk vatandaşları ile yabancı uyruklu kişiler arasındaki evlenme, nişanlanma, boşanma, velayet, mal rejimi ve benzeri tüm aile hukuku uyuşmazlıklarında hizmet sunulmaktadır. Soy bağı, nafaka, evlat edinme ve kadına karşı şiddet durumlarında tedbir taleplerinde de tecrübeli avukatlarımız hizmet vermektedir.</p>
+      </div>
+      <div class="service-highlights">
+        <h4>Hizmet Kapsamı</h4>
+        <ul>
+          <li>Boşanma Davaları</li>
+          <li>Velayet & Nafaka</li>
+          <li>Mal Rejimi Uyuşmazlıkları</li>
+          <li>Evlat Edinme</li>
+          <li>Anlaşmalı Protokol Hazırlama</li>
+        </ul>
+      </div>
+    </div>
+    <div id="tab-gayrimenkul" class="tab-content">
+      <div class="service-body">
+        <h3>Gayrimenkul & Kira Hukuku</h3>
+        <p>Tapu kütüğüne tapu tesisi, iptali, terkini ve tescili; istihkak davaları; intifa hakkı, geçit hakkı ve diğer ayni haklar; kat karşılığı inşaat sözleşmesi, müteahhitlik, taşeronluk ve benzeri inşaat hukuku uyuşmazlıkları. Kira sözleşmelerinden doğan her türlü anlaşmazlık ve icra yoluyla çözüm hizmetleri sunulmaktadır.</p>
+      </div>
+      <div class="service-highlights">
+        <h4>Hizmet Kapsamı</h4>
+        <ul>
+          <li>Tapu İptali & Tescil Davaları</li>
+          <li>Kat Karşılığı İnşaat Sözleşmeleri</li>
+          <li>Kira Uyuşmazlıkları</li>
+          <li>Kira Alacağı İcra Takibi</li>
+          <li>Ayni Haklar</li>
+        </ul>
+      </div>
+    </div>
+    <div id="tab-vergi" class="tab-content">
+      <div class="service-body">
+        <h3>Vergi Hukuku</h3>
+        <p>Vergi hukuku, devlet ile özel kişiler arasındaki ilişkiden doğan ve kendine has normları barındıran özel bir hukuk dalıdır. Kurumlar vergisi, gelir vergisi, KDV, gelir vergisi stopajı, emlak vergisi, damga vergisi ve motorlu taşıtlar vergisi başta olmak üzere tüm vergi uyuşmazlıklarında uzman kadromuz hizmet vermektedir.</p>
+      </div>
+      <div class="service-highlights">
+        <h4>Hizmet Kapsamı</h4>
+        <ul>
+          <li>Kurumlar & Gelir Vergisi</li>
+          <li>KDV Uyuşmazlıkları</li>
+          <li>Transfer Fiyatlandırması</li>
+          <li>Vergi İdaresi ile Müzakere</li>
+          <li>Dar Mükellef Gelir Beyanı</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="iletisim">
+  <div class="contact-inner">
+    <div class="reveal">
+      <div class="section-label">İletişim</div>
+      <h2 class="section-title">Bizimle<br><em>İletişime</em> Geçin</h2>
+      <div class="divider"></div>
+      <div class="contact-detail">
+        <div class="contact-detail-label">Adres</div>
+        <div class="contact-detail-value">Atatürk Mah. Sedef Cad. Ata Blokları 3/4 K:6,<br>D:193, 34722 İstanbul</div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-label">Telefon</div>
+        <div class="contact-detail-value"><a href="tel:+902164564060">+90 216 456 40 60</a></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-label">E-posta</div>
+        <div class="contact-detail-value"><a href="mailto:info@temizlaw.com">info@temizlaw.com</a></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-label">Hizmet Dilleri</div>
+        <div class="contact-detail-value">Türkçe · English · Deutsch · Русский</div>
+      </div>
+    </div>
+    
+    <form class="contact-form reveal" name="iletisim" method="POST" data-netlify="true">
+      <h3 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:1.6rem; margin-bottom:1.8rem; color:var(--navy);">Danışma Talebi</h3>
+      <div class="form-grid">
+        <div class="form-row">
+          <label>Ad</label>
+          <input type="text" name="ad" placeholder="Adınız" required />
+        </div>
+        <div class="form-row">
+          <label>Soyad</label>
+          <input type="text" name="soyad" placeholder="Soyadınız" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <label>E-posta</label>
+        <input type="email" name="email" placeholder="ornek@mail.com" required />
+      </div>
+      <div class="form-row">
+        <label>Telefon</label>
+        <input type="tel" name="telefon" placeholder="+90 5xx xxx xx xx" />
+      </div>
+      <div class="form-row">
+        <label>Hukuk Alanı</label>
+        <select name="hukuk-alani">
+          <option value="">Seçiniz</option>
+          <option value="Ceza Hukuku">Ceza Hukuku</option>
+          <option value="Bilişim Hukuku & KVKK">Bilişim Hukuku & KVKK</option>
+          <option value="Ticaret Hukuku">Ticaret Hukuku</option>
+          <option value="İş Hukuku">İş Hukuku</option>
+          <option value="İdare Hukuku">İdare Hukuku</option>
+          <option value="Aile Hukuku">Aile Hukuku</option>
+          <option value="Gayrimenkul & Kira Hukuku">Gayrimenkul & Kira Hukuku</option>
+          <option value="Vergi Hukuku">Vergi Hukuku</option>
+          <option value="İcra & İflas Hukuku">İcra & İflas Hukuku</option>
+          <option value="Sigorta & Tahkim">Sigorta & Tahkim</option>
+          <option value="Diğer">Diğer</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Mesajınız</label>
+        <textarea name="mesaj" placeholder="Talebinizi kısaca açıklayınız…" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">
+        Gönder <span>→</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo"><img src="temiz-logo1.png" alt="Temiz Law Firm" /></div>
+  <div class="footer-copy">©2025 Temiz Law · Tüm hakları saklıdır.</div>
+  <div class="footer-langs">
+    <a href="#">TR</a>
+    <a href="#">EN</a>
+    <a href="#">DE</a>
+    <a href="#">RU</a>
+  </div>
+</footer>
+
+<!-- Dil Değiştirici -->
+<div class="lang-switcher" id="lang-switcher">
+  <div class="lang-options" id="lang-options">
+    <button class="lang-option active" data-lang="tr">TR</button>
+    <button class="lang-option" data-lang="en">EN</button>
+    <button class="lang-option" data-lang="de">DE</button>
+    <button class="lang-option" data-lang="ru">RU</button>
+  </div>
+  <button class="lang-btn" id="lang-btn">TR</button>
+</div>
+
+<script>
+  /* ── QUOTE ROTATOR ───────────────────── */
+  let currentQuote = 0;
+  const totalQuotes = 3;
+  function goToQuote(n) {
+    document.querySelectorAll('.quote-item').forEach((el,i) => el.classList.toggle('active', i===n));
+    document.querySelectorAll('.quote-dot').forEach((el,i) => el.classList.toggle('active', i===n));
+    currentQuote = n;
+  }
+  setInterval(() => goToQuote((currentQuote+1) % totalQuotes), 5000);
+
+  /* ── TAB SWITCHER ────────────────────── */
+  function switchTab(name) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    const c = document.getElementById('tab-'+name);
+    if (c) c.classList.add('active');
+    const b = Array.from(document.querySelectorAll('.tab-btn')).find(b => (b.getAttribute('onclick')||'').includes("'"+name+"'"));
+    if (b) b.classList.add('active');
+  }
+
+  /* ── TRANSLATIONS ────────────────────── */
+  const T = {
+    tr: {
+      nav: ['Hakkımızda','Avukatlarımız','Faaliyet Alanları','Hizmetler','İletişim'],
+      hero_eyebrow: 'İstanbul · Uluslararası Hukuk Bürosu',
+      hero_subtitle: 'Güvenilir, Profesyonel ve Uluslararası Hukuki Danışmanlık',
+      btn_primary: 'Danışma Talep Et', btn_outline: 'Faaliyet Alanları', hero_scroll: 'Keşfet',
+      quotes_label: 'Hukuk Üzerine',
+      quotes: [
+        'Hukuk ilmi mukaddes bir şeydir. Kıymetini para ile ölçmek onu çok aşağılatmak olur.',
+        'Görevimizi yaparken kimseye tabiyiz; ne müvekkile, ne hakime, hele ne iktidara. Avukatlar tarih boyu köle kullanmadılar ama hiçbir zaman efendileri de olmadı.',
+        'Adalet ancak hakikatten, saadet ancak adaletten doğabilir.'
+      ],
+      about_label: 'Hakkımızda',
+      about_title: 'Hukukun<br><em>İlkeleri</em> Üzerine<br>Kurulu Bir Büro',
+      about_p: [
+        'Temiz Hukuk, Av. Ali Başar Temiz tarafından kurulmuş olup hukukun birçok alanında profesyonel hizmet veren uluslararası bir hukuk bürosudur.',
+        'Türkiye\'nin uluslararası alanda önde gelen hukuk büroları arasında bulunan Temiz Hukuk\'un merkezi İstanbul olmakla birlikte Türkiye\'nin diğer önemli merkezlerinde de bürolarla iş birliği içindedir. Büromuz Türkçe, İngilizce, Almanca ve Rusça dillerinde hizmet sunmaktadır.',
+        'Müvekkillerimize; inşaat, gayrimenkul, turizm, lojistik, otomotiv, enerji, dijital perakende, sağlık, hızlı tüketim, kimya ve petrol ürünleri sektörlerinde ulusal ve uluslararası düzeyde hukuki destek sunulmaktadır.'
+      ],
+      stat_labels: ['Dil','Hukuk Alanı','Uluslararası Erişim','Merkez Ofis'],
+      team_label: 'Kadromuz',
+      team_title: 'Avukat<em>larımız</em>',
+      team_roles: ['Kurucu Avukat','Avukat','Avukat','Avukat'],
+      practice_label: 'Uzmanlık',
+      practice_title: 'Faaliyet <em>Alanlarımız</em>',
+      practice_intro: 'Ceza, ticaret, iş, idare, tüketici, icra ve iflas, aile, taşınmaz, sigorta ve vergi hukuku alanlarında hukuki danışmanlık ve dava hizmetleri sunuyoruz.',
+      cards: [
+        {t:'Ceza Hukuku', p:'Ağır ceza ve asliye ceza mahkemesi yetki alanındaki davalarda müdafilik ve müşteki vekilliği hizmetleri.'},
+        {t:'Bilişim & KVKK', p:'GDPR ve KVKK kapsamında veri güvenliği, bilişim hukuku ve dijital suçlar konularında uzman danışmanlık.'},
+        {t:'Ticaret Hukuku', p:'Anonim ve limited şirketler, kıymetli evrak, uluslararası ticari ilişkiler ve şirket danışmanlıkları.'},
+        {t:'İş Hukuku', p:'İşçi ve işveren hakları, iş uyuşmazlıkları, dava, arabuluculuk ve güncel mevzuat danışmanlığı.'},
+        {t:'İdare Hukuku', p:'Gümrük, vergi, imar, kamulaştırma ve idari cezalara ilişkin geniş kapsamlı idare davaları portfolyosu.'},
+        {t:'Gayrimenkul & Kira', p:'Tapu iptali, tescil, intifa hakkı, kat karşılığı inşaat sözleşmeleri ve kira hukukuna ilişkin tüm uyuşmazlıklar.'},
+        {t:'Aile Hukuku', p:'Evlilik, boşanma, velayet, nafaka, mal rejimleri ve evlat edinme süreçlerinde kapsamlı hukuki destek.'},
+        {t:'İcra & İflas', p:'Alacak tahsili, icra takibi ve iflas süreçlerinin başarıyla yönetilmesi için uzman hukuki rehberlik.'},
+        {t:'Vergi & Sigorta', p:'Kurumlar, gelir, KDV ve damga vergisi uyuşmazlıkları; sigorta tahkimi ve tazminat talepleri.'}
+      ],
+      services_label: 'Detaylı Bilgi',
+      services_title: 'Hizmet <em style="color:var(--gold-light);">Alanlarımız</em>',
+      tabs: ['Ceza','Bilişim & KVKK','Ticaret','İş','İdare','Aile','Gayrimenkul','Vergi'],
+      scope: 'Hizmet Kapsamı',
+      tab_content: [
+        {h:'Ceza Hukuku', p:'Oldukça kapsamlı olan ceza hukuku, suç teşkil eden bir haksızlığın varlığından söz edilebilmesi ve bir kişi hakkında ceza hukuku yaptırımı uygulanabilmesi için gerekli şartların oluşup oluşmadığı ile ilgilenir. Büromuzda hem ağır ceza hem de asliye ceza mahkemesi yetki alanına dahil suçlarla ilgili defalarca çalışılmış olup müdafilik ve müşteki vekilliği hizmetleri sunulmaktadır.', li:['Ağır Ceza Mahkemesi Davaları','Asliye Ceza Mahkemesi Davaları','Müdafilik Hizmeti','Müşteki Vekilliği','Ceza Hukuku Teorisi Danışmanlığı']},
+        {h:'Bilişim Hukuku & KVKK', p:'Verilerin elektronik ortamlarda toplandığı günümüz dünyasında, hem Türk hukuku hem de uluslararası mevzuat çerçevesinde veri güvenliğiniz için hizmet sunmaktayız. AB Genel Veri Koruma Regülasyonu (GDPR) ve KVKK kapsamında hem danışmanlık hem de bağımsız hizmet olarak ihtiyaçlarınıza Türkçe ve İngilizce cevap vermekteyiz.', li:['KVKK Uyum Danışmanlığı','GDPR Süreç Yönetimi','Veri Güvenliği Politikaları','Bilişim Şirketi Danışmanlığı','Dijital Suçlar']},
+        {h:'Ticaret Hukuku', p:'Ticaret hukuku; işletmeler, tacirler ve bireyler arasındaki tüm ticari ilişkileri, alışverişi ve tarafların haklarını düzenler. Kıymetli evrak uyuşmazlıkları, anonim ve limited şirketler, Türkiye ile ticari bağlantısı bulunan yabancı şirketlere kapsamlı hizmet sunulmaktadır. Distribütörlük, satım ve şirket danışmanlıkları da faaliyet alanımızdadır.', li:['Şirket Kuruluşu & Yönetimi','Kıymetli Evrak Uyuşmazlıkları','Uluslararası Ticaret Sözleşmeleri','Distribütörlük Sözleşmeleri','İthalat & İhracat Hukuku','Lisans Sözleşmeleri (TR/EN)']},
+        {h:'İş Hukuku', p:'Türkiye\'de en çok ihtilafın doğduğu alanlardan biri olan iş hukuku, İş Kanunu ve yardımcı düzenlemeler kapsamında değerlendirilir. Covid-19 sürecinde getirilen yeni düzenlemeler dahil tüm güncel mevzuat çerçevesinde şirketlere bilgilendirme ve uyarı yapılmaktadır. Hem işverenler hem de işçiler için her türlü dava, arabuluculuk ve çözüm yolları icra edilmektedir.', li:['İşçi & İşveren Davaları','Arabuluculuk','İşe İade Davaları','Kıdem & İhbar Tazminatı','Toplu İş Hukuku']},
+        {h:'İdare Hukuku', p:'Özel kişi ve kurumların devlet ile olan ilişkilerini düzenleyen idare hukuku; gümrük, vergi, imar, kamulaştırma ve idari cezalarda özel uzmanlık gerektirmektedir. Kurucu Av. Ali Başar Temiz\'in idare hukuku yüksek lisans eğitiminden ve yoğun dava deneyiminden kaynaklanan geniş bir portfolyoya sahibiz.', li:['İdare Mahkemesi Davaları','Kamulaştırma Uyuşmazlıkları','İmar Hukuku','Gümrük Uyuşmazlıkları','İdari Cezalar']},
+        {h:'Aile Hukuku', p:'Türk vatandaşları ile yabancı uyruklu kişiler arasındaki evlenme, nişanlanma, boşanma, velayet, mal rejimi ve benzeri tüm aile hukuku uyuşmazlıklarında hizmet sunulmaktadır. Soy bağı, nafaka, evlat edinme ve kadına karşı şiddet durumlarında tedbir taleplerinde de tecrübeli avukatlarımız hizmet vermektedir.', li:['Boşanma Davaları','Velayet & Nafaka','Mal Rejimi Uyuşmazlıkları','Evlat Edinme','Anlaşmalı Protokol Hazırlama']},
+        {h:'Gayrimenkul & Kira Hukuku', p:'Tapu kütüğüne tapu tesisi, iptali, terkini ve tescili; istihkak davaları; intifa hakkı, geçit hakkı ve diğer ayni haklar; kat karşılığı inşaat sözleşmesi, müteahhitlik, taşeronluk ve benzeri inşaat hukuku uyuşmazlıkları. Kira sözleşmelerinden doğan her türlü anlaşmazlık ve icra yoluyla çözüm hizmetleri sunulmaktadır.', li:['Tapu İptali & Tescil Davaları','Kat Karşılığı İnşaat Sözleşmeleri','Kira Uyuşmazlıkları','Kira Alacağı İcra Takibi','Ayni Haklar']},
+        {h:'Vergi Hukuku', p:'Vergi hukuku, devlet ile özel kişiler arasındaki ilişkiden doğan ve kendine has normları barındıran özel bir hukuk dalıdır. Kurumlar vergisi, gelir vergisi, KDV, gelir vergisi stopajı, emlak vergisi, damga vergisi ve motorlu taşıtlar vergisi başta olmak üzere tüm vergi uyuşmazlıklarında uzman kadromuz hizmet vermektedir.', li:['Kurumlar & Gelir Vergisi','KDV Uyuşmazlıkları','Transfer Fiyatlandırması','Vergi İdaresi ile Müzakere','Dar Mükellef Gelir Beyanı']}
+      ],
+      contact_label: 'İletişim',
+      contact_title: 'Bizimle<br><em>İletişime</em> Geçin',
+      contact_labels: ['Adres','Telefon','E-posta','Hizmet Dilleri'],
+      form_title: 'Danışma Talebi',
+      form_labels: ['Ad','Soyad','E-posta','Telefon','Hukuk Alanı','Mesajınız'],
+      form_ph: ['Adınız','Soyadınız','ornek@mail.com','+90 5xx xxx xx xx','','Talebinizi kısaca açıklayınız…'],
+      form_opts: ['Seçiniz','Ceza Hukuku','Bilişim Hukuku & KVKK','Ticaret Hukuku','İş Hukuku','İdare Hukuku','Aile Hukuku','Gayrimenkul & Kira Hukuku','Vergi Hukuku','İcra & İflas Hukuku','Sigorta & Tahkim','Diğer'],
+      submit: 'Gönder',
+      footer_copy: '©2025 Temiz Law · Tüm hakları saklıdır.'
+    },
+    en: {
+      nav: ['About','Our Lawyers','Practice Areas','Services','Contact'],
+      hero_eyebrow: 'Istanbul · International Law Firm',
+      hero_subtitle: 'Trusted, Professional and International Legal Counsel',
+      btn_primary: 'Request Consultation', btn_outline: 'Practice Areas', hero_scroll: 'Explore',
+      quotes_label: 'On Law',
+      quotes: [
+        'The science of law is sacred. To measure its value in money is to greatly degrade it.',
+        'In carrying out our duty, we are subordinate to no one — not to the client, not to the judge, and certainly not to those in power. Lawyers have never used slaves throughout history, but they have never had masters either.',
+        'Justice can only arise from truth, and happiness can only arise from justice.'
+      ],
+      about_label: 'About Us',
+      about_title: 'A Firm Built on the<br><em>Principles</em> of Law',
+      about_p: [
+        'Temiz Law Firm was founded by Av. Ali Başar Temiz and is an international law firm providing professional legal services across many fields of law.',
+        'Temiz Law is among Turkey\'s leading internationally recognized law firms. Headquartered in Istanbul, it collaborates with offices in other major centers throughout Turkey. Our firm provides services in Turkish, English, German and Russian.',
+        'We provide national and international legal support to our clients in the construction, real estate, tourism, logistics, automotive, energy, digital retail, healthcare, fast-moving consumer goods, chemicals and petroleum products sectors.'
+      ],
+      stat_labels: ['Languages','Practice Areas','International Reach','Head Office'],
+      team_label: 'Our Team',
+      team_title: 'Our <em>Lawyers</em>',
+      team_roles: ['Founding Attorney','Attorney','Attorney','Attorney'],
+      practice_label: 'Expertise',
+      practice_title: 'Practice <em>Areas</em>',
+      practice_intro: 'We provide legal consultation and litigation services in criminal, commercial, labor, administrative, enforcement & insolvency, family, real estate, insurance and tax law.',
+      cards: [
+        {t:'Criminal Law', p:'Defense and victim representation in cases within the jurisdiction of heavy criminal and criminal courts of first instance.'},
+        {t:'IT & Data Protection', p:'Expert consulting on data security, IT law and digital crimes under GDPR and the Turkish Data Protection Law (KVKK).'},
+        {t:'Commercial Law', p:'Joint-stock and limited liability companies, negotiable instruments, international commercial relations and corporate advisory.'},
+        {t:'Labor Law', p:'Employee and employer rights, labor disputes, litigation, mediation and current regulatory consulting.'},
+        {t:'Administrative Law', p:'Extensive portfolio in customs, tax, zoning, expropriation and administrative penalty cases.'},
+        {t:'Real Estate & Tenancy', p:'Title deed cancellation, registration, easements, construction contracts and all tenancy law disputes.'},
+        {t:'Family Law', p:'Comprehensive legal support in marriage, divorce, custody, alimony, matrimonial property regimes and adoption.'},
+        {t:'Enforcement & Insolvency', p:'Expert legal guidance for debt collection, enforcement proceedings and insolvency process management.'},
+        {t:'Tax & Insurance', p:'Corporate, income, VAT and stamp tax disputes; insurance arbitration and compensation claims.'}
+      ],
+      services_label: 'Details',
+      services_title: 'Our <em style="color:var(--gold-light);">Services</em>',
+      tabs: ['Criminal','IT & Data','Commercial','Labor','Administrative','Family','Real Estate','Tax'],
+      scope: 'Scope of Services',
+      tab_content: [
+        {h:'Criminal Law', p:'Criminal law is a comprehensive field concerned with determining whether a wrongful act constitutes a crime and whether the conditions for applying criminal sanctions to a person are met. Our firm has extensive experience in cases before both heavy criminal and criminal courts of first instance, providing defense and victim representation services.', li:['Heavy Criminal Court Cases','Criminal Court of First Instance Cases','Defense Counsel Services','Victim Representation','Criminal Law Theory Consulting']},
+        {h:'IT & Data Protection Law', p:'In today\'s world where data is collected in electronic environments, we provide services to protect your data security within both Turkish law and international regulations. We respond to your needs in Turkish and English under the EU General Data Protection Regulation (GDPR) and KVKK, both as consultancy and independent service.', li:['KVKK Compliance Consulting','GDPR Process Management','Data Security Policies','IT Company Advisory','Digital Crimes']},
+        {h:'Commercial Law', p:'Commercial law governs all commercial relations, transactions and the rights of parties between businesses, merchants and individuals. We provide comprehensive services to companies, negotiable instrument disputes, and foreign companies with commercial ties to Turkey. Distributorship, sales and corporate advisory are also among our practice areas.', li:['Company Formation & Management','Negotiable Instruments Disputes','International Trade Agreements','Distributorship Agreements','Import & Export Law','License Agreements (TR/EN)']},
+        {h:'Labor Law', p:'Labor law, one of the most contentious areas in Turkey, is evaluated under the Labor Act and related regulations. Companies are briefed within the framework of all current legislation, including new regulations introduced during the Covid-19 period. All types of litigation, mediation and resolution processes are conducted for both employers and employees.', li:['Employee & Employer Litigation','Mediation','Reinstatement to Work Suits','Severance & Notice Pay','Collective Labor Law']},
+        {h:'Administrative Law', p:'Administrative law, which regulates the relationship between private individuals and the state, requires specialist expertise in customs, tax, zoning, expropriation and administrative penalties. We have a broad portfolio derived from Founding Partner Av. Ali Başar Temiz\'s graduate education in administrative law and his extensive litigation experience.', li:['Administrative Court Cases','Expropriation Disputes','Zoning Law','Customs Disputes','Administrative Penalties']},
+        {h:'Family Law', p:'We provide services in all family law disputes between Turkish citizens and foreign nationals, including marriage, engagement, divorce, custody, matrimonial property regime and similar matters. Our experienced lawyers also handle precautionary measures in cases of filiation, alimony, adoption and violence against women.', li:['Divorce Proceedings','Custody & Alimony','Matrimonial Property Disputes','Adoption','Agreed Protocol Preparation']},
+        {h:'Real Estate & Tenancy Law', p:'Establishment, cancellation and registration of title deeds; recovery of possession claims; usufruct rights, rights of way and other real rights; construction share contracts, contracting, subcontracting and similar construction law disputes. All disputes arising from tenancy agreements and their resolution through enforcement proceedings.', li:['Title Deed Cancellation & Registration','Construction Share Contracts','Tenancy Disputes','Enforcement of Rent Arrears','Real Rights']},
+        {h:'Tax Law', p:'Tax law is a special branch of law arising from the relationship between the state and private individuals, containing its own unique norms. Our expert team provides services in all tax disputes, primarily corporate tax, income tax, VAT, withholding tax, property tax, stamp duty and motor vehicle tax.', li:['Corporate & Income Tax','VAT Disputes','Transfer Pricing','Negotiation with Tax Authorities','Non-Resident Income Declaration']}
+      ],
+      contact_label: 'Contact',
+      contact_title: 'Get in<br><em>Touch</em> with Us',
+      contact_labels: ['Address','Phone','E-mail','Service Languages'],
+      form_title: 'Consultation Request',
+      form_labels: ['First name','Last name','E-mail','Phone','Legal Area','Your message'],
+      form_ph: ['First name','Last name','example@mail.com','+90 5xx xxx xx xx','','Briefly describe your request…'],
+      form_opts: ['Select','Criminal Law','IT Law & Data Protection','Commercial Law','Labor Law','Administrative Law','Family Law','Real Estate & Tenancy Law','Tax Law','Enforcement & Insolvency Law','Insurance & Arbitration','Other'],
+      submit: 'Send',
+      footer_copy: '©2025 Temiz Law · All rights reserved.'
+    },
+    de: {
+      nav: ['Über Uns','Anwälte','Tätigkeitsbereiche','Dienstleistungen','Kontakt'],
+      hero_eyebrow: 'Istanbul · Internationale Anwaltskanzlei',
+      hero_subtitle: 'Vertrauenswürdige, professionelle und international tätige Rechtsberatung',
+      btn_primary: 'Beratung Anfordern', btn_outline: 'Tätigkeitsbereiche', hero_scroll: 'Entdecken',
+      quotes_label: 'Über Recht',
+      quotes: [
+        'Die Rechtswissenschaft ist heilig. Ihren Wert in Geld zu messen, würde sie sehr erniedrigen.',
+        'Bei der Erfüllung unserer Pflicht sind wir niemandem unterworfen — weder dem Mandanten noch dem Richter, geschweige denn der Macht. Anwälte haben in der Geschichte nie Sklaven gehalten, aber sie hatten auch nie Herren.',
+        'Gerechtigkeit kann nur aus der Wahrheit entstehen, und Glück kann nur aus der Gerechtigkeit entstehen.'
+      ],
+      about_label: 'Über Uns',
+      about_title: 'Eine Kanzlei, gegründet auf den<br><em>Grundsätzen</em> des Rechts',
+      about_p: [
+        'Die Kanzlei Temiz wurde von Av. Ali Başar Temiz gegründet und ist eine internationale Anwaltskanzlei, die professionelle Rechtsdienstleistungen in vielen Bereichen des Rechts erbringt.',
+        'Temiz Law gehört zu den führenden international anerkannten Anwaltskanzleien der Türkei. Mit Hauptsitz in Istanbul arbeitet die Kanzlei auch mit Büros in anderen wichtigen Zentren der Türkei zusammen. Unsere Kanzlei bietet Dienstleistungen auf Türkisch, Englisch, Deutsch und Russisch an.',
+        'Unseren Mandanten werden nationale und internationale Rechtsberatungsleistungen in den Bereichen Bau, Immobilien, Tourismus, Logistik, Automobil, Energie, digitaler Einzelhandel, Gesundheitswesen, Konsumgüter, Chemie und Mineralölprodukte angeboten.'
+      ],
+      stat_labels: ['Sprachen','Rechtsbereiche','Internationaler Zugang','Hauptsitz'],
+      team_label: 'Unser Team',
+      team_title: 'Unsere <em>Anwälte</em>',
+      team_roles: ['Gründungsanwalt','Rechtsanwältin','Rechtsanwältin','Rechtsanwältin'],
+      practice_label: 'Expertise',
+      practice_title: 'Tätigkeits<em>bereiche</em>',
+      practice_intro: 'Wir bieten Rechtsberatung und Prozessführung in Straf-, Handels-, Arbeits-, Verwaltungs-, Vollstreckungs-, Familien-, Immobilien-, Versicherungs- und Steuerrecht an.',
+      cards: [
+        {t:'Strafrecht', p:'Verteidigungs- und Nebenklagevertretungsdienste in Fällen vor Schwurgerichten und Amtsgerichten.'},
+        {t:'IT & Datenschutz', p:'Expertenberatung zu Datensicherheit, IT-Recht und digitalen Straftaten im Rahmen der DSGVO und des türkischen Datenschutzgesetzes (KVKK).'},
+        {t:'Handelsrecht', p:'Aktien- und GmbH-Gesellschaften, Wertpapiere, internationale Handelsbeziehungen und Unternehmensberatung.'},
+        {t:'Arbeitsrecht', p:'Rechte von Arbeitnehmern und Arbeitgebern, Arbeitsstreitigkeiten, Prozessführung, Mediation und aktuelle Rechtsberatung.'},
+        {t:'Verwaltungsrecht', p:'Umfangreiches Portfolio in Zoll-, Steuer-, Bebauungsplanungs-, Enteignungs- und Verwaltungsstrafverfahren.'},
+        {t:'Immobilien & Miete', p:'Grundbuchlöschung, Eintragung, Nießbrauch, Bauträgerverträge und alle mietrechtlichen Streitigkeiten.'},
+        {t:'Familienrecht', p:'Umfassende Unterstützung bei Scheidung, Sorgerecht, Unterhalt, Güterständen und Adoptionsverfahren.'},
+        {t:'Vollstreckung & Insolvenz', p:'Fachkundige Rechtsberatung für Forderungseinzug, Vollstreckungsverfahren und Insolvenzprozesse.'},
+        {t:'Steuer & Versicherung', p:'Körperschaft-, Einkommens-, Mehrwert- und Stempelsteuerstreitigkeiten; Versicherungsschiedsverfahren und Schadensersatzansprüche.'}
+      ],
+      services_label: 'Details',
+      services_title: 'Unsere <em style="color:var(--gold-light);">Leistungen</em>',
+      tabs: ['Strafrecht','IT & Datenschutz','Handelsrecht','Arbeitsrecht','Verwaltungsrecht','Familienrecht','Immobilien','Steuerrecht'],
+      scope: 'Leistungsumfang',
+      tab_content: [
+        {h:'Strafrecht', p:'Das Strafrecht befasst sich damit, ob eine rechtswidrige Handlung eine Straftat darstellt und ob die Voraussetzungen für strafrechtliche Sanktionen erfüllt sind. Unsere Kanzlei verfügt über umfangreiche Erfahrung vor Schwurgerichten und Strafgerichten erster Instanz.', li:['Schwurgerichtsverfahren','Strafgerichtsverfahren erster Instanz','Verteidigungsdienste','Nebenklagevertretung','Strafrechtliche Theorieberatung']},
+        {h:'IT- & Datenschutzrecht', p:'Wir bieten Datensicherheitsdienstleistungen im Rahmen des türkischen Rechts und der internationalen Vorschriften an. Wir reagieren auf Ihre Bedürfnisse gemäß der DSGVO und dem türkischen Datenschutzgesetz (KVKK) auf Türkisch und Englisch.', li:['KVKK-Compliance-Beratung','DSGVO-Prozessmanagement','Datensicherheitsrichtlinien','IT-Unternehmensberatung','Digitale Straftaten']},
+        {h:'Handelsrecht', p:'Das Handelsrecht regelt alle Handelsbeziehungen zwischen Unternehmen, Kaufleuten und Einzelpersonen. Wir bieten umfassende Dienstleistungen für Aktiengesellschaften, GmbHs, Wertpapierfälle und ausländische Unternehmen mit Handelsbeziehungen zur Türkei an.', li:['Unternehmensgründung & -verwaltung','Wertpapierstreitigkeiten','Internationale Handelsverträge','Händlerverträge','Import- & Exportrecht','Lizenzverträge (TR/EN)']},
+        {h:'Arbeitsrecht', p:'Das Arbeitsrecht wird im Rahmen des Arbeitsgesetzes und zugehöriger Vorschriften bewertet. Unternehmen werden über alle aktuellen Rechtsvorschriften informiert, einschließlich neuer Regelungen während der Covid-19-Periode. Wir vertreten sowohl Arbeitgeber als auch Arbeitnehmer.', li:['Arbeitnehmer- & Arbeitgeberprozesse','Mediation','Wiedereinstellungsklagen','Abfindungs- & Kündigungsentschädigung','Kollektives Arbeitsrecht']},
+        {h:'Verwaltungsrecht', p:'Das Verwaltungsrecht erfordert besondere Expertise in Zoll, Steuer, Bebauungsplanung, Enteignung und Verwaltungsstrafen. Wir verfügen über ein breites Portfolio aus der verwaltungsrechtlichen Hochschulausbildung und dem Prozesserfahrung unseres Gründungspartners.', li:['Verwaltungsgerichtsverfahren','Enteignungsstreitigkeiten','Bauplanungsrecht','Zollstreitigkeiten','Verwaltungsstrafen']},
+        {h:'Familienrecht', p:'Wir bieten Dienstleistungen bei allen familienrechtlichen Streitigkeiten zwischen türkischen Staatsbürgern und Ausländern an, einschließlich Scheidung, Sorgerecht, Güterstand und Adoption. Unsere erfahrenen Anwälte bearbeiten auch einstweiligen Rechtsschutz bei Gewalt gegen Frauen.', li:['Scheidungsverfahren','Sorgerecht & Unterhalt','Güterstandsstreitigkeiten','Adoption','Einvernehmliche Protokollvorbereitung']},
+        {h:'Immobilien- & Mietrecht', p:'Begründung, Löschung und Eintragung von Grundbuchurkunden; Besitzklagen; Nießbrauchsrechte und andere dingliche Rechte; Bauträgerverträge, Generalunternehmertum und ähnliche baurechtliche Streitigkeiten sowie alle Mietstreitigkeiten.', li:['Grundbuchlöschung & -eintragung','Bauträgerverträge','Mietstreitigkeiten','Vollstreckung von Mietrückständen','Dingliche Rechte']},
+        {h:'Steuerrecht', p:'Das Steuerrecht enthält eigene einzigartige Normen. Unser Expertenteam bietet Dienstleistungen bei allen Steuerstreitigkeiten an, insbesondere Körperschaftsteuer, Einkommensteuer, Mehrwertsteuer, Lohnsteuer, Grundsteuer, Stempelsteuer und Kraftfahrzeugsteuer.', li:['Körperschaft- & Einkommensteuer','Mehrwertsteuerstreitigkeiten','Verrechnungspreise','Verhandlungen mit Steuerbehörden','Einkommenserklärung für beschränkt Steuerpflichtige']}
+      ],
+      contact_label: 'Kontakt',
+      contact_title: 'Nehmen Sie<br><em>Kontakt</em> auf',
+      contact_labels: ['Adresse','Telefon','E-Mail','Beratungssprachen'],
+      form_title: 'Beratungsanfrage',
+      form_labels: ['Vorname','Nachname','E-Mail','Telefon','Rechtsgebiet','Ihre Nachricht'],
+      form_ph: ['Vorname','Nachname','beispiel@mail.com','+90 5xx xxx xx xx','','Beschreiben Sie kurz Ihre Anfrage…'],
+      form_opts: ['Auswählen','Strafrecht','IT-Recht & Datenschutz','Handelsrecht','Arbeitsrecht','Verwaltungsrecht','Familienrecht','Immobilien- & Mietrecht','Steuerrecht','Vollstreckungs- & Insolvenzrecht','Versicherung & Schiedsverfahren','Sonstiges'],
+      submit: 'Senden',
+      footer_copy: '©2025 Temiz Law · Alle Rechte vorbehalten.'
+    },
+    ru: {
+      nav: ['О нас','Адвокаты','Направления','Услуги','Контакты'],
+      hero_eyebrow: 'Стамбул · Международная юридическая фирма',
+      hero_subtitle: 'Надёжные, профессиональные и международные юридические консультации',
+      btn_primary: 'Запросить консультацию', btn_outline: 'Направления', hero_scroll: 'Узнать больше',
+      quotes_label: 'О праве',
+      quotes: [
+        'Наука права священна. Измерять её ценность деньгами означало бы крайне унизить её.',
+        'При исполнении нашего долга мы не подчиняемся никому — ни клиенту, ни судье, тем более власть имущим. Адвокаты никогда не использовали рабов на протяжении всей истории, но у них никогда не было и хозяев.',
+        'Справедливость может возникнуть только из истины, а счастье — только из справедливости.'
+      ],
+      about_label: 'О нас',
+      about_title: 'Фирма, основанная на<br><em>принципах</em> права',
+      about_p: [
+        'Юридическая фирма Temiz была основана Av. Али Башаром Темизом и является международной юридической фирмой, оказывающей профессиональные услуги в различных областях права.',
+        'Temiz Law входит в число ведущих международно признанных юридических фирм Турции. Имея главный офис в Стамбуле, фирма сотрудничает с офисами в других крупных центрах страны. Наша фирма оказывает услуги на турецком, английском, немецком и русском языках.',
+        'Мы оказываем национальную и международную юридическую поддержку клиентам в сферах строительства, недвижимости, туризма, логистики, автомобильной промышленности, энергетики, цифровой розничной торговли, здравоохранения, товаров повседневного спроса, химии и нефтепродуктов.'
+      ],
+      stat_labels: ['Языки','Области права','Международный охват','Главный офис'],
+      team_label: 'Наша команда',
+      team_title: 'Наши <em>адвокаты</em>',
+      team_roles: ['Основатель','Адвокат','Адвокат','Адвокат'],
+      practice_label: 'Экспертиза',
+      practice_title: 'Направления <em>работы</em>',
+      practice_intro: 'Мы оказываем юридические консультации и судебные услуги в области уголовного, коммерческого, трудового, административного, семейного, имущественного, страхового и налогового права.',
+      cards: [
+        {t:'Уголовное право', p:'Услуги защиты и представления потерпевших по делам в судах по тяжким преступлениям и уголовных судах первой инстанции.'},
+        {t:'IT и защита данных', p:'Экспертные консультации по информационной безопасности, IT-праву и цифровым преступлениям в рамках GDPR и KVKK.'},
+        {t:'Коммерческое право', p:'Акционерные общества и ООО, ценные бумаги, международные коммерческие отношения и корпоративное консультирование.'},
+        {t:'Трудовое право', p:'Права работников и работодателей, трудовые споры, судебные разбирательства, медиация и консультации по законодательству.'},
+        {t:'Административное право', p:'Обширное портфолио дел в области таможни, налогов, градостроительства, экспроприации и административных санкций.'},
+        {t:'Недвижимость и аренда', p:'Отмена и регистрация права собственности, узуфрукт, договоры долевого строительства и все арендные споры.'},
+        {t:'Семейное право', p:'Комплексная поддержка в вопросах развода, опеки, алиментов, имущественных режимов и усыновления.'},
+        {t:'Исполнение и банкротство', p:'Квалифицированное сопровождение взыскания долгов, исполнительного производства и процедур банкротства.'},
+        {t:'Налоги и страхование', p:'Споры по корпоративному, подоходному налогу, НДС и гербовому сбору; страховой арбитраж и компенсации.'}
+      ],
+      services_label: 'Подробнее',
+      services_title: 'Наши <em style="color:var(--gold-light);">услуги</em>',
+      tabs: ['Уголовное','IT & Данные','Коммерческое','Трудовое','Административное','Семейное','Недвижимость','Налоговое'],
+      scope: 'Перечень услуг',
+      tab_content: [
+        {h:'Уголовное право', p:'Уголовное право — всеобъемлющая область, занимающаяся определением того, является ли действие преступлением. Наша фирма имеет обширный опыт работы по делам как в судах по тяжким преступлениям, так и в уголовных судах первой инстанции.', li:['Дела в суде по тяжким преступлениям','Дела в уголовном суде первой инстанции','Услуги защитника','Представление потерпевших','Консультации по теории уголовного права']},
+        {h:'IT и защита данных', p:'В современном мире мы оказываем услуги по защите информационной безопасности в рамках турецкого и международного законодательства. Мы отвечаем на запросы в соответствии с GDPR и KVKK на турецком и английском языках.', li:['Консультации по соответствию KVKK','Управление процессами GDPR','Политики информационной безопасности','Консультирование IT-компаний','Цифровые преступления']},
+        {h:'Коммерческое право', p:'Коммерческое право регулирует все коммерческие отношения и сделки между предприятиями, торговцами и частными лицами. Мы оказываем комплексные услуги акционерным обществам, ООО и иностранным компаниям с коммерческими связями с Турцией.', li:['Создание и управление компанией','Споры по ценным бумагам','Международные торговые соглашения','Дистрибьюторские соглашения','Законодательство об импорте и экспорте','Лицензионные соглашения (TR/EN)']},
+        {h:'Трудовое право', p:'Трудовое право оценивается в рамках Трудового кодекса и сопутствующих нормативных актов. Компании информируются о всём действующем законодательстве, включая нормы периода COVID-19. Мы ведём дела как для работодателей, так и для работников.', li:['Судебные дела работников и работодателей','Медиация','Иски о восстановлении на работе','Выходное пособие и компенсация','Коллективное трудовое право']},
+        {h:'Административное право', p:'Административное право регулирует отношения между частными лицами и государством и требует специальной экспертизы в области таможни, налогов, градостроительства и экспроприации. Мы располагаем широким портфолио партнёра-основателя.', li:['Дела в административном суде','Споры об экспроприации','Градостроительное право','Таможенные споры','Административные санкции']},
+        {h:'Семейное право', p:'Мы оказываем услуги по всем семейно-правовым спорам между гражданами Турции и иностранными гражданами, включая развод, опеку, имущественный режим и усыновление. Наши адвокаты также занимаются защитой от насилия.', li:['Бракоразводные процессы','Опека и алименты','Споры об имущественном режиме','Усыновление','Подготовка согласительных протоколов']},
+        {h:'Право на недвижимость и аренду', p:'Установление, отмена и регистрация права собственности; виндикационные иски; права узуфрукта и другие вещные права; договоры долевого участия и все споры из договоров аренды.', li:['Аннулирование и регистрация права собственности','Договоры долевого строительства','Арендные споры','Взыскание задолженности по аренде','Вещные права']},
+        {h:'Налоговое право', p:'Налоговое право содержит собственные уникальные нормы. Наша команда оказывает услуги по всем налоговым спорам, прежде всего по корпоративному налогу, подоходному налогу, НДС, налогу у источника, налогу на имущество и гербовому сбору.', li:['Корпоративный и подоходный налог','Споры по НДС','Трансфертное ценообразование','Переговоры с налоговыми органами','Декларация о доходах нерезидентов']}
+      ],
+      contact_label: 'Контакты',
+      contact_title: 'Свяжитесь<br><em>с нами</em>',
+      contact_labels: ['Адрес','Телефон','Эл. почта','Языки обслуживания'],
+      form_title: 'Запрос консультации',
+      form_labels: ['Имя','Фамилия','Эл. почта','Телефон','Юридическая область','Ваше сообщение'],
+      form_ph: ['Имя','Фамилия','primer@mail.com','+90 5xx xxx xx xx','','Кратко опишите вашу просьбу…'],
+      form_opts: ['Выбрать','Уголовное право','IT-право и защита данных','Коммерческое право','Трудовое право','Административное право','Семейное право','Право на недвижимость и аренду','Налоговое право','Исполнительное и банкротное право','Страхование и арбитраж','Другое'],
+      submit: 'Отправить',
+      footer_copy: '©2025 Temiz Law · Все права защищены.'
+    }
+  };
+
+  /* ── APPLY ALL TEXTS ─────────────────── */
+  function applyTexts(lang) {
+    const t = T[lang] || T.tr;
+    const qs = s => document.querySelector(s);
+    const qsa = s => document.querySelectorAll(s);
+    const txt = (s, v) => { const e = qs(s); if (e) e.textContent = v; };
+    const htm = (s, v) => { const e = qs(s); if (e) e.innerHTML = v; };
+
+    // Nav links
+    const navLinks = qsa('.nav-links a');
+    navLinks.forEach((a, i) => { if (t.nav[i]) a.textContent = t.nav[i]; });
+
+    // Hero
+    txt('.hero-eyebrow', t.hero_eyebrow);
+    txt('.hero-subtitle', t.hero_subtitle);
+    txt('.btn-primary', t.btn_primary);
+    txt('.btn-outline', t.btn_outline);
+    txt('.hero-scroll', t.hero_scroll);
+
+    // Quotes
+    txt('#quotes .section-label', t.quotes_label);
+    qsa('.quote-text').forEach((el, i) => { if (t.quotes[i]) el.textContent = t.quotes[i]; });
+
+    // About
+    txt('#hakkimizda .section-label', t.about_label);
+    htm('#hakkimizda .section-title', t.about_title);
+    qsa('#hakkimizda .about-text p').forEach((el, i) => { if (t.about_p[i]) el.textContent = t.about_p[i]; });
+    qsa('#hakkimizda .stat-label').forEach((el, i) => { if (t.stat_labels[i]) el.textContent = t.stat_labels[i]; });
+
+    // Team
+    txt('#ekibimiz .section-label', t.team_label);
+    htm('#ekibimiz .section-title', t.team_title);
+    qsa('#ekibimiz .team-title').forEach((el, i) => { if (t.team_roles[i]) el.textContent = t.team_roles[i]; });
+
+    // Practice
+    txt('#faaliyetler .section-label', t.practice_label);
+    htm('#faaliyetler .section-title', t.practice_title);
+    txt('#faaliyetler .section-header p', t.practice_intro);
+    qsa('.practice-card').forEach((card, i) => {
+      if (!t.cards[i]) return;
+      const ti = card.querySelector('.pc-title'); if (ti) ti.textContent = t.cards[i].t;
+      const p  = card.querySelector('.pc-text');  if (p)  p.textContent  = t.cards[i].p;
+    });
+
+    // Services
+    txt('#hizmetler .section-label', t.services_label);
+    htm('#hizmetler .section-title', t.services_title);
+    qsa('.services-tabs .tab-btn').forEach((b, i) => { if (t.tabs[i]) b.textContent = t.tabs[i]; });
+
+    // Tab content
+    const tabIds = ['tab-ceza','tab-bilisim','tab-ticaret','tab-is','tab-idare','tab-aile','tab-gayrimenkul','tab-vergi'];
+    tabIds.forEach((id, i) => {
+      const tab = document.getElementById(id);
+      const tc  = t.tab_content[i];
+      if (!tab || !tc) return;
+      const h3 = tab.querySelector('h3'); if (h3) h3.textContent = tc.h;
+      const p  = tab.querySelector('.service-body p'); if (p) p.textContent = tc.p;
+      const h4 = tab.querySelector('h4'); if (h4) h4.textContent = t.scope;
+      tab.querySelectorAll('li').forEach((li, j) => { if (tc.li[j]) li.textContent = tc.li[j]; });
+    });
+
+    // Contact
+    txt('#iletisim .section-label', t.contact_label);
+    htm('#iletisim .section-title', t.contact_title);
+    qsa('#iletisim .contact-detail-label').forEach((el, i) => { if (t.contact_labels[i]) el.textContent = t.contact_labels[i]; });
+
+    // Form
+    const form = qs('form.contact-form');
+    if (form) {
+      const fh = form.querySelector('h3'); if (fh) fh.textContent = t.form_title;
+      form.querySelectorAll('label').forEach((el, i) => { if (t.form_labels[i]) el.textContent = t.form_labels[i]; });
+      form.querySelectorAll('input, textarea').forEach((el, i) => { if (t.form_ph[i]) el.placeholder = t.form_ph[i]; });
+      form.querySelectorAll('select option').forEach((el, i) => { if (t.form_opts[i] != null) el.textContent = t.form_opts[i]; });
+      const sb = form.querySelector('.form-submit'); if (sb) sb.innerHTML = t.submit + ' <span>→</span>';
+    }
+
+    // Footer
+    txt('.footer-copy', t.footer_copy);
+  }
+
+  /* ── LANGUAGE SWITCHER ───────────────── */
+  function setLanguage(lang) {
+    localStorage.setItem('site_lang', lang);
+    document.getElementById('lang-btn').textContent = lang.toUpperCase();
+    document.querySelectorAll('.lang-option').forEach(el => el.classList.toggle('active', el.dataset.lang === lang));
+    applyTexts(lang);
+  }
+
+  const langBtn = document.getElementById('lang-btn');
+  const langOptions = document.getElementById('lang-options');
+  langBtn.addEventListener('click', () => langOptions.classList.toggle('open'));
+  document.addEventListener('click', e => { if (!e.target.closest('#lang-switcher')) langOptions.classList.remove('open'); });
+  document.querySelectorAll('.lang-option').forEach(btn => {
+    btn.addEventListener('click', () => { setLanguage(btn.dataset.lang); langOptions.classList.remove('open'); });
+  });
+
+  const saved = localStorage.getItem('site_lang');
+  setLanguage((saved && ['tr','en','de','ru'].includes(saved)) ? saved : 'tr');
+
+  /* ── SCROLL REVEAL ───────────────────── */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+
+  /* ── NAV SHRINK ──────────────────────── */
+  const mainNav = document.getElementById('main-nav');
+  const navLogoImg = document.querySelector('.nav-logo img');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 80;
+    mainNav.style.padding = scrolled ? '0.3rem 4rem' : '0.6rem 4rem';
+    if (navLogoImg) navLogoImg.style.height = scrolled ? '50px' : '75px';
+  });
+</script>
+</body>
+</html>
